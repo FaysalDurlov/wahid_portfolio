@@ -38,7 +38,10 @@
     }
 
     /* ===== BASE ===== */
-    html { font-size: 16px; }
+    html { 
+      font-size: 16px; 
+      scroll-behavior: smooth;
+    }
     body {
       font-family: var(--font-sans);
       background: var(--bg);
@@ -47,25 +50,64 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    a { text-decoration: none; color: inherit; }
-    img { display: block; max-width: 100%; }
-    ul { list-style: none; }
+    section {
+      scroll-margin-top: 90px;
+    }
+    a { 
+      text-decoration: none; 
+      color: inherit; 
+    }
+    img { 
+      display: block; 
+      max-width: 100%; 
+    }
+    ul { 
+      list-style: none; 
+    }
+
+    /* ===== MOBILE SMOOTH SCROLL ===== */
+    @media (max-width: 768px) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
 
     /* ===== UTILITY ===== */
-    .container { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .container { 
+      max-width: 72rem; 
+      margin: 0 auto; 
+      padding: 0 1.5rem; }
+    .sr-only { 
+      position: absolute; 
+      width: 1px; 
+      height: 1px; 
+      padding: 0; 
+      margin: -1px; 
+      overflow: hidden; 
+      clip: rect(0,0,0,0); 
+      white-space: nowrap; 
+      border: 0; 
+    }
 
     /* ===== HEADER ===== */
     .header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      z-index: 50;
       background: color-mix(in srgb, var(--bg) 80%, transparent);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
     .header-inner {
-      max-width: 72rem; margin: 0 auto; padding: 1rem 1.5rem;
-      display: flex; align-items: center; justify-content: space-between;
+      max-width: 72rem; 
+      margin: 0 auto; 
+      padding: 1rem 1.5rem;
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
     }
     .header-brand { display: flex; flex-direction: column; }
     .header-name { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; color: var(--fg); }
